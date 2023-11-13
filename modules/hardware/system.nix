@@ -2,6 +2,7 @@
   with lib;
 {
   imports = [
+    ./ata/system.nix
     ./audio/system.nix
   ];
 }
