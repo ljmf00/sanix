@@ -17,6 +17,20 @@
 
       layout = "us";
       xkbOptions = "eurosign:e,caps:escape";
+      libinput = {
+        enable = true;
+
+        # disabling mouse acceleration
+        mouse = {
+          accelProfile = "flat";
+        };
+
+        # disabling touchpad acceleration
+        touchpad = {
+          accelProfile = "flat";
+          tapping = true;
+        };
+      };
     };
 
     # Enable interfacing X11 with Wayland
