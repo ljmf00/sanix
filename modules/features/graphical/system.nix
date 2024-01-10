@@ -42,5 +42,12 @@
 
     # Enable XDG icons
     xdg.icons.enable = true;
+
+    environment.systemPackages = with pkgs;
+    [
+      glxinfo
+    ];
+
+    hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
   };
 }
