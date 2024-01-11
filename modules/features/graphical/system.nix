@@ -36,18 +36,17 @@
     # Enable interfacing X11 with Wayland
     programs.xwayland.enable = true;
 
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      QT_QPA_PLATFORM = "wayland";
+      XDG_SESSION_TYPE = "wayland";
+    };
+
     # Enable QT framework
     qt.enable = true;
     qt.style = "adwaita-dark";
 
     # Enable XDG icons
     xdg.icons.enable = true;
-
-    environment.systemPackages = with pkgs;
-    [
-      glxinfo
-    ];
-
-    hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
   };
 }
